@@ -1,0 +1,94 @@
+.home-page {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    
+    padding: 20px;
+    
+
+
+}
+.home-title {
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+    ;
+
+}
+
+.home-subtitle {
+    font-size: 18px;
+    margin-top: 18px;
+    max-width: 350px;
+    font-family: var(--font-display);
+}
+.ingredients-section {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 64px;
+}
+.ingredients-form { 
+    display: flex;
+    
+    gap: 10px;
+    margin-bottom: 16px;
+    margin-top: 4px;
+    max-width: 700px;
+   
+}
+.ingredients-form input {
+    padding: 20px;
+    border: 1px solid #7c7c7c;
+    border-radius: 15px;
+    width: 100%;
+}
+.ingredients-form button { 
+    
+    background-color: #ebebeb;
+    border: 1px solid #7c7c7c;
+    border-radius: 15px;
+    padding: 20px;
+    
+}
+.ingredients-form button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+.empty-hint {
+    font-size: 18px;
+    color: #acacac;
+    margin-top: 20px;
+}
+.ingredient-tags {
+    list-style: none;
+    width: 800px;
+    display: flex;
+    background-color: aquas;
+    gap: 8px;
+    margin:  0;
+    font-size: 18px;
+
+
+}
+.ingredient-tag {
+    padding: 10px;
+    border: 1px solid #7c7c7c;
+    border-radius: 15px;
+}
+.tag-remove {
+   text-decoration: none;
+    margin-right: 10px;
+   
+
+}
+.sorce-button {
+    margin-top: 60px;
+    max-width: 100%;
+    background-color: #8DFF91;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #7c7c7c;
+}
+.sorce-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}

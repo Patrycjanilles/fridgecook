@@ -1,10 +1,14 @@
 import {useState} from 'react'
 import './HomePage.css'
 
+import {matchRecipes} from '../utils/matchRecipes'
+
 
 function HomePage() {
     const [inputValue, setInputValue] = useState('')
     const [ingredients, setIngredients] = useState<string[]>([])
+    const [showResults, setShowResults] = useState(false)
+    const results = showResults ? matchRecipes(ingredients) : []
 
     function handleAdd() {
       const trimmed = inputValue.trim()
@@ -17,6 +21,12 @@ function HomePage() {
     function handleRemove(itemToRemove: string) {
       setIngredients(ingredients.filter((item) => item !== itemToRemove))
 
+    }
+
+    function handleSearch() {
+      if (ingredients.length === 0) return
+
+      setShowResults(true)
     }
 
 
@@ -44,7 +54,7 @@ function HomePage() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
-            <button type="submit" onClick={handleAdd}>
+            <button type="submit">
               Add
 
             </button>
@@ -74,10 +84,48 @@ function HomePage() {
   </ul>
 )}
 
-<button type="button" className="search-button" onClick={handleAdd}>
+<button type="button" className="search-button" onClick={handleSearch}>
               Search
 
             </button>
+
+            {showResults && (
+              <div className='results-section'>
+                <h2>Your Recipes</h2>
+
+                {results.length === 0 ? (
+                <p className='results-empty'>
+                    No results. Add more ingredients. 
+                   
+
+                </p>
+
+            ) : (
+                <ul className='results-list'>
+                    {results.map(({ recipe, matchPercent, missing }) => (
+                        <li className='results-card' key={recipe.id}>
+                            <p className='results-card-title'>
+                                {recipe.name}
+
+                            </p>
+                            <p className='results-card-percent'>
+                                {matchPercent}% match
+
+                            </p>
+
+                            {missing.length > 0 && (
+                                <p className='results-card-missing'>Missing: {missing.join(', ')}
+
+                                </p>
+                            )}
+
+                        </li>
+                    ))}
+
+                </ul>
+              )}
+              </div>
+            )}
           </section>
         </div>
     )

@@ -1,0 +1,82 @@
+.cookbook {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    
+    padding: 20px;
+}
+.cookbook-title {
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+}
+.cookbook-subtitle {
+    font-size: 18px;
+    margin-top: 18px;
+    max-width: 350px;
+    font-family: var(--font-display);
+}
+.search-input {
+    display: flex;
+    
+    gap: 10px;
+    margin-bottom: 16px;
+    margin-top: 4px;
+    max-width: 700px;
+    padding: 20px;
+    border: 1px solid #7c7c7c;
+    border-radius: 15px;
+    width: 100%;
+}
+.cookbook-count { 
+    font-size: 18px;
+    margin-top: 60px;
+}
+.cookbook-grid {
+    display: grid;
+    grid-tamplate-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 20px;
+    gap: 20px;
+    list-style: none;
+    max-width: 800px;
+}
+.cookbook-card {
+    border: 0.5px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cookbook-card-title {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: var(--font-display);
+}
+.cookbook-card-info {
+    display: flex;
+    gap: 20px;
+    display: flex;
+
+    align-items: center;
+
+}
+.cookbook-card-delete {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.cookbook-card-delete img {
+    display: block;
+}
+
+.cookbook-card-clock {
+    padding-right: 4px;
+    
+}
+.cookbook-card-tag {
+    padding: 4px 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}

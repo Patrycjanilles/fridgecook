@@ -74,7 +74,7 @@ function HomePage() {
   </ul>
 )}
 
-<button type="submit" className="sorce-button" onClick={handleAdd}>
+<button type="button" className="search-button" onClick={handleAdd}>
               Search
 
             </button>

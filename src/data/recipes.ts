@@ -5,7 +5,7 @@ export type Recipe = {
     timeMinutes: number
     steps: string[]
     tags: string[]
-
+    description: string
 }
 export const recipes: Recipe[] = [
     {
@@ -19,6 +19,7 @@ export const recipes: Recipe[] = [
             'Cook the pasta following pack instructions. Drain and toss with the sauce. Scatter over the parmesan and parsley leaves to serve.',
         ],
         tags: ['dinner'],
+        description: 'Sausage ragu is a rich and comforting Italian-inspired sauce made with sausages, tomatoes, herbs, and aromatic vegetables. It’s slowly simmered until thick and flavorful, then served with pasta and topped with Parmesan.',
     },
     {
         id: '2',
@@ -31,6 +32,8 @@ export const recipes: Recipe[] = [
             'Cook until set, fold, serve.',
         ],
         tags: ['breakfast'],
+        description: 'A simple and fluffy omelette made with eggs, butter, and a touch of seasoning. Perfect for a quick and delicious breakfast.',
+
     },
     {
         id: '3',
@@ -42,6 +45,7 @@ export const recipes: Recipe[] = [
             'Combine the ginger, garlic, soy, honey and half the lemon juice in a bowl. Heat the oil in a large frying pan or wok over a high heat and fry the chicken for 3-4 mins until lightly golden. Tip in the honey sauce and stir-fry for 10 mins, or until the chicken is cooked through and the sauce has reduced enough to coat the back of a spoon. Taste for seasoning and squeeze over the remaining lemon juice, if needed, then serve with rice and steamed broccoli, if you like.',
         ],
         tags: ['dinner'],
+        description: 'Sweet and savory chicken coated in a delicious honey glaze, with a touch of garlic and seasoning. Perfect with rice or vegetables.', 
     },
     {
         id: '4',
@@ -56,6 +60,7 @@ export const recipes: Recipe[] = [
             'Serve your pancakes stacked up on a plate with a drizzle of maple syrup and any of your favourite toppings.',
         ],
         tags: ['breakfast'], 
+        description: 'Fluffy American-style pancakes, lightly sweet and golden on the outside. Perfect served with maple syrup and fresh fruit.',
     },
     {
         id: '5',
@@ -67,6 +72,7 @@ export const recipes: Recipe[] = [
             'Heat the oil in a non-stick frying pan then fry the chicken for a couple of mins – it will cook very quickly so keep an eye on it. Meanwhile, warm the wraps following the pack instructions or, if you have a gas hob, heat them over the flame to slightly char them. Do not let them dry out or they are difficult to roll.',
             'Squash half an avocado onto each wrap, add the peppers to the pan to warm them through then pile onto the wraps with the chicken, and sprinkle over the coriander. Roll up, cut in half and eat with your fingers.',
         ],
-        tags: ['lunch'],    
+        tags: ['lunch'],   
+        description: 'Spicy chicken and creamy avocado wrapped in a soft tortilla with fresh vegetables. A quick, flavorful meal with a little kick.',
     }
 ]

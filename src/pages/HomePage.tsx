@@ -63,7 +63,7 @@ function HomePage() {
 
             {ingredients.length === 0 ? (
   <p className="empty-hint">
-    jeszcze nic nie ma 
+    There is nothing yet
   </p>
 ) : (
   <ul className="ingredient-tags">
@@ -91,11 +91,12 @@ function HomePage() {
 
             {showResults && (
               <div className='results-section'>
-                <h2>Your Recipes</h2>
+                
 
                 {results.length === 0 ? (
                 <p className='results-empty'>
-                    No results. Add more ingredients. 
+                    No results. 
+                   <br />  Add more ingredients. 
                    
 
                 </p>

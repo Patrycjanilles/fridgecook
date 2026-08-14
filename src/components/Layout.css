@@ -23,17 +23,21 @@
     
 
 }
+
 .bar-link {
     text-decoration: none;
     color:black;
     font-family: var(--font-display);
 }
 
+.bar-link:hover {
+    color: #949494;
+}
 .sign-in {
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-family: var(--font-display);
-    
+    border: 0.5px solid rgb(0, 0, 0);
     border-radius: 30px;
     padding: 8px 16px;
     background-color: rgb(0, 0, 0);
@@ -44,4 +48,14 @@
     background-color: #8DFF91;
     color: rgb(0, 0, 0);
 }
-  
+
+.bar-favorites {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: var(--font-display);
+    margin-right: 70px;
+}
+
+.bar-favorites:hover {
+    color: #949494;
+}

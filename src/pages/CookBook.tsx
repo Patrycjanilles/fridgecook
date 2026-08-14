@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { recipes } from '../data/recipes';
 import clockIcon from '../assets/lucide_clock.svg'
-import trashIcon from '../assets/tabler_trash.svg'
+// import trashIcon from '../assets/tabler_trash.svg'
 import './CookBook.css';
+import { Link } from 'react-router-dom'
 
 function CookBook() {
 
@@ -14,8 +15,8 @@ function CookBook() {
 
     return (
         <div className="cookbook">
-            <h1 className='cookbook-title'>Recipes saved</h1>
-            <p className='cookbook-subtitle'>Browse all recipes in your cookbook.</p>
+            <h1 className='cookbook-title'>CookBook</h1>
+            <p className='cookbook-subtitle'>Browse all recipes in your cookbook</p>
 
             <input type="text" className='search-input' placeholder='Search seved recipes...'
             value={search} onChange={(e) => setSearch(e.target.value)}
@@ -30,7 +31,9 @@ function CookBook() {
                {filtered.map((recipe) => (
                 <li key={recipe.id} className='cookbook-card'>
                     <div className='cookbook-card-content'>
-                        <p className='cookbook-card-title'>{recipe.name}</p>
+                    <Link to={`/recipes/${recipe.id}`} className="cookbook-card-title">
+                        {recipe.name}
+                        </Link>
 
                         <div className='cookbook-card-info'>
                         <span className='cookbook-card-tag'>{recipe.tags[0]}</span>
@@ -41,15 +44,17 @@ function CookBook() {
                            
                         </div>
                     </div>
-
+{/* 
                     <button 
-                    type='button'
-                    className='cookbook-card-delete'
-                    aria-label={`Delete ${recipe.name}`}
-                    >
-                        <img src={trashIcon} alt="trash icon" className='cookbook-card-icon' />
+                        type='button'
+                        className='cookbook-card-delete'
+                        aria-label={`Delete ${recipe.name}`}
+                        >
+                            <img src={trashIcon} alt="trash icon" className='cookbook-card-icon' />
 
                     </button>
+*/}
+                    
 
                 </li>
                ))}

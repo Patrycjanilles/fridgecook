@@ -3,10 +3,12 @@
 import { Link, useParams } from "react-router-dom";
 import { recipes } from "../data/recipes";
 import './RecipePage.css';
+import { useFavorites } from '../hooks/useFavorites' 
 
 function RecipePage() { 
     const { id } = useParams()
     const recipe = recipes.find((item) => item.id === id)
+    const { isFavorite, toggleFavorite } = useFavorites() 
 
     if (!recipe) {
         return (
@@ -42,8 +44,10 @@ return (
         ))}
       </ol>
 
-      <button type='button' className="recipe-save">
-        Save to favorites
+      <button type='button' className="recipe-save"
+      onClick={() => toggleFavorite(recipe.id)}>
+
+        {isFavorite(recipe.id) ? 'Saved' : 'Save to favorites'}
 
       </button>
         

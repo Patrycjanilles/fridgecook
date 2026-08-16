@@ -82,3 +82,14 @@
     border: 1px solid black;
     border-radius: 20px;
 }
+
+@media(max-width: 768px) {
+    
+    .cookbook {
+        margin-bottom: 60px;
+    }
+    
+    .cookbook-grid {
+        padding: 0;
+    }
+}

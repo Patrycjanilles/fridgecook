@@ -59,3 +59,48 @@
 .bar-favorites:hover {
     color: #949494;
 }
+
+.hamburger {
+    display: block;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        position: sticky;
+        
+    }
+}
+.hamburger {
+    
+    border: none;
+    background: transparent;
+    font-size: 32px;
+    cursor: pointer;
+    display: block;
+}
+.touch-bar {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    z-index: 99;
+    font-size: 24px;
+}
+.touch-bar.is-open {
+    display: flex;
+}
+.bar-favorites {
+    margin-right: 0;
+}
+.home-page {
+    margin: 0;
+}

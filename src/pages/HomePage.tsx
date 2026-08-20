@@ -2,6 +2,7 @@ import {useState} from 'react'
 import './HomePage.css'
 
 import {matchRecipes} from '../utils/matchRecipes'
+import { Link } from 'react-router-dom'
 
 
 function HomePage() {
@@ -84,7 +85,7 @@ function HomePage() {
   </ul>
 )}
 
-<button type="button" className="search-button" onClick={handleSearch}>
+<button type="button" className="search-button" onClick={handleSearch} disabled={ingredients.length === 0}>
               Search
 
             </button>
@@ -105,10 +106,10 @@ function HomePage() {
                 <ul className='results-list'>
                     {results.map(({ recipe, matchPercent, missing }) => (
                         <li className='results-card' key={recipe.id}>
-                            <p className='results-card-title'>
+                            <Link to={`/recipes/${recipe.id}`} className='results-card-title'>
                                 {recipe.name}
 
-                            </p>
+                            </Link>
                             <p className='results-card-percent'>
                                 {matchPercent}% match
 

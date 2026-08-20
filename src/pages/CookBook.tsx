@@ -18,16 +18,18 @@ function CookBook() {
             <h1 className='cookbook-title'>CookBook</h1>
             <p className='cookbook-subtitle'>Browse all recipes in your cookbook</p>
 
-            <input type="text" className='search-input' placeholder='Search seved recipes...'
+            <input type="text" className='search-input' placeholder='Search recipes...'
             value={search} onChange={(e) => setSearch(e.target.value)}
              />
 
              <p className='cookbook-count'>
-                {filtered.length} recipes saved
+                {filtered.length} recipes
              </p>
 
-
-            <ul className='cookbook-grid'>
+            {filtered.length === 0 ? (
+                <p className='cookbook-empty'>No recipes match your search.</p>
+            ) : (
+                <ul className='cookbook-grid'>
                {filtered.map((recipe) => (
                 <li key={recipe.id} className='cookbook-card'>
                     <div className='cookbook-card-content'>
@@ -60,6 +62,10 @@ function CookBook() {
                ))}
 
             </ul>
+            
+            )}
+
+            
         </div>
     )
 }

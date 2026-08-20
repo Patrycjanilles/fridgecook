@@ -61,8 +61,10 @@
 }
 
 .hamburger {
-    display: block;
+    display: none;
 }
+
+
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -71,7 +73,7 @@
         position: sticky;
         
     }
-}
+
 .hamburger {
     
     border: none;
@@ -101,6 +103,5 @@
 .bar-favorites {
     margin-right: 0;
 }
-.home-page {
-    margin: 0;
+
 }

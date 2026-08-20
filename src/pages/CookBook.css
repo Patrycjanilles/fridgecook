@@ -1,7 +1,7 @@
 .cookbook {
     max-width: 1200px;
     margin: 30px auto 0;
-    
+   
     padding: 20px;
 }
 .cookbook-title {
@@ -82,7 +82,11 @@
     border: 1px solid black;
     border-radius: 20px;
 }
-
+.cookbook-empty {
+    font-size: 14px;
+    color: #acacac;
+    margin-top: 20px;
+}
 @media(max-width: 768px) {
     
     .cookbook {

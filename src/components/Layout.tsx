@@ -35,7 +35,7 @@ function Layout() {
                     <Link to="/" className='bar-link' onClick={closeMenu}>Find</Link>
                     <Link to="/recipes" className='bar-link' onClick={closeMenu}>CookBook</Link>
                     <Link to="/favorites" className='bar-favorites' onClick={closeMenu}>Favorites</Link>
-                    <Link to="/" className='sign-in' onClick={closeMenu}>Sign In</Link>
+                    <Link to="/login" className='sign-in' onClick={closeMenu}>Sign In</Link>
                     
                 </nav>
             </header>

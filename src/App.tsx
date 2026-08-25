@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import CookBook from './pages/CookBook'
 import RecipePage from './pages/RecipePage'
 import Favorites from './pages/Favorites'
+import AuthPage from './pages/AuthPage'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="recipes" element={<CookBook />} />
           <Route path='recipes/:id' element={<RecipePage />} />
           <Route path='favorites' element={<Favorites />} />
+          <Route path='login' element={<AuthPage />} />
           </Route>
 
        

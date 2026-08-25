@@ -2,13 +2,22 @@ import {useState } from 'react'
 import {useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import './AuthPage.css'
+import { useState, useEffect } from 'react'
+import useAuth from '../hooks/useAuth'
 
 
 function AuthPage() {
     const navigate = useNavigate()
+    const { user } = useAuth()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    }, [user, navigate])
 
     async function handleSignIn() {
         setError('')

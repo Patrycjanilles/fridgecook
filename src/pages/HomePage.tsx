@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './HomePage.css'
-
+import useRecipes from '../hooks/useRecipes'
 import {matchRecipes} from '../utils/matchRecipes'
 import { Link } from 'react-router-dom'
 
@@ -9,7 +9,9 @@ function HomePage() {
     const [inputValue, setInputValue] = useState('')
     const [ingredients, setIngredients] = useState<string[]>([])
     const [showResults, setShowResults] = useState(false)
-    const results = showResults ? matchRecipes(ingredients) : []
+    const { recipes, loading } = useRecipes()
+    const results = showResults ? matchRecipes(ingredients, recipes) : []
+    
 
     function handleAdd() {
       const trimmed = inputValue.trim()
@@ -30,7 +32,14 @@ function HomePage() {
       setShowResults(true)
     }
 
+    if (loading) {
+      return (
+        <div className='home-page'>
+          <p>Loading recipes...</p>
 
+        </div>
+      )
+    }
 
 
     

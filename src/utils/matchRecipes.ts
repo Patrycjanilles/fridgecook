@@ -1,4 +1,5 @@
-import { recipes,type Recipe } from '../data/recipes'
+import type { Recipe } from '../data/recipes'
+
 
 export type MatchedRecipe = {
     recipe: Recipe
@@ -10,7 +11,7 @@ function normalize(text: string) {
     return text.trim().toLowerCase()
 }
 
-export function matchRecipes(userIngredients: string[]): MatchedRecipe[] {
+export function matchRecipes(userIngredients: string[], recipes: Recipe[]): MatchedRecipe[] {
     const have = userIngredients.map(normalize)
 
     const matched = recipes.map((recipe) => {

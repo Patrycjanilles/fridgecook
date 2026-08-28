@@ -1,14 +1,24 @@
  
 
-import { Link, useParams } from "react-router-dom";
-import { recipes } from "../data/recipes";
+import { Link, useParams } from "react-router-dom"
+import useRecipes from '../hooks/useRecipes'
 import './RecipePage.css';
 import { useFavorites } from '../hooks/useFavorites' 
 
 function RecipePage() { 
     const { id } = useParams()
+    const { recipes, loading } = useRecipes()
     const recipe = recipes.find((item) => item.id === id)
     const { isFavorite, toggleFavorite } = useFavorites() 
+
+    if (loading) {
+      return (
+        <div className="recipe">
+          <p>Loading...</p>
+
+        </div>
+      )
+    }
 
     if (!recipe) {
         return (

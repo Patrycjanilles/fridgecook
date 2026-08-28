@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { recipes } from '../data/recipes';
+import useRecipes from '../hooks/useRecipes'
 import clockIcon from '../assets/lucide_clock.svg'
 // import trashIcon from '../assets/tabler_trash.svg'
 import './CookBook.css';
@@ -8,11 +8,20 @@ import { Link } from 'react-router-dom'
 function CookBook() {
 
     const [search, setSearch] = useState('')
+    const {recipes, loading } = useRecipes()
 
     const filtered = recipes.filter((recipe) => 
     recipe.name.toLowerCase().includes(search.toLowerCase())
     )
 
+    if (loading) {
+        return (
+            <div className='cookbook'>
+                <p>Loading recipes...</p>
+
+            </div>
+        )
+    }
     return (
         <div className="cookbook">
             <h1 className='cookbook-title'>CookBook</h1>

@@ -1,12 +1,21 @@
 import { Link} from 'react-router-dom'
-import { recipes } from '../data/recipes'
+import useRecipes from '../hooks/useRecipes'
 import { useFavorites } from '../hooks/useFavorites'
 import './Favorites.css'
 
 function Favorites() {
     const { favorites } = useFavorites()
+    const { recipes, loading } = useRecipes()
     const savedRecipes = recipes.filter((recipe) => favorites.includes(recipe.id)
 )
+
+    if (loading) {
+        return (
+            <div className='favorites'>
+                <p>Loading...</p>
+            </div>
+        )
+    }
 
 return (
     <div className='favorites'>

@@ -35,7 +35,7 @@ return (
 
         <h1 className="recipe-title">{recipe.name}</h1>
        <div className="recipe-info">
-       <p className="recipe-tags">{recipe.tags}</p>
+       <p className="recipe-tags">{recipe.tags.join(', ')}</p>
        <p className="recipe-time">{recipe.timeMinutes} min</p>
        </div>
        <p className="recipe-description">{recipe.description}</p>

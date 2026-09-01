@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# FridgeCook
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Recipe app: you add what’s in the fridge, it shows what you can cook.
 
-Currently, two official plugins are available:
+**Live:** https://fridgecook-three.vercel.app  
+**Stack:** React 19, TypeScript, Vite, React Router, Supabase, CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+- Add ingredients and match them to recipes
+- Browse the cookbook and open a recipe detail page
+- Save favorites (localStorage when logged out, Supabase when logged in)
+- Sign up / sign in / sign out
+- Responsive layout (desktop nav + mobile hamburger)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How it works
 
-## Expanding the Oxlint configuration
+- **React Router** — nested routes: home, recipes list, recipe `:id`, favorites, login
+- **Custom hooks** — `useRecipes`, `useFavorites`, `useAuth`
+- **Supabase** — auth, recipes table, favorites for logged-in users
+- **Matching** — recipes are scored against the ingredients you typed
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Run locally
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Create a `.env` with your Supabase URL and anon key (do not commit the service role key):
+
+```
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+```
+
+## What I focused on
+
+Building a small but complete UI: routing, auth, remote data, empty/loading states, and a layout that works on phone and desktop — not a tutorial todo list.
